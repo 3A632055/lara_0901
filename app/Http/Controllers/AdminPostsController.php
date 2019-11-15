@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,9 +12,9 @@ class AdminPostsController extends Controller
     public function index()
     {
        // return view('admin.posts.index');
-        $posts=Post::orderBy('created_at','DESC')->get();
-        $data=['posts'=>$posts];
-        return view('admin.posts.index',$data);
+        $post=Post::orderBy('created_at', 'DESC')->get();
+        $data=['posts'=>$post];
+        return view('admin.posts.index', $data);
 
     }
 
@@ -45,4 +46,12 @@ class AdminPostsController extends Controller
         Post::create($request->all());
         return redirect()->route('admin.posts.index');
     }
+
+    //單元練習< 練習7-3> 在 PostsController的 destroy內刪除資料
+    public function destroy($id)
+    {
+    Post::destroy($id);
+    return redirect()->route('admin.posts.index');
+    }
+
 }
