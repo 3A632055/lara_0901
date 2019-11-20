@@ -13,7 +13,8 @@ class PostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        //設定 authorize()回傳 true
+        return true;
     }
 
     /**
