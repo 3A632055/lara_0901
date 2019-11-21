@@ -6,6 +6,8 @@ use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+//單元2 < 練習2-3> 編輯 PostsController 裡設定 typehinting
+use App\Http\Requests\PostRequest;
 
 class AdminPostsController extends Controller
 {
@@ -32,7 +34,8 @@ class AdminPostsController extends Controller
     }
 
     //單元練習< 練習6-5> 在 PostsController的 update內更新資料
-    public function update(Request $request,$id)
+    //單元2 < 練習2-3> 編輯 PostsController 裡設定 typehinting
+    public function update(PostRequest $request,$id)
     {
     $post=Post::find($id);
     $post->update($request->all());
@@ -41,7 +44,8 @@ class AdminPostsController extends Controller
     //單元練習< 練習4-4> 設定 AdminPostsController對應的 function
     //單元練習< 練習5-1> 將表單送過來的資料用 Model 寫入資料庫
     //單元練習< 練習5-2>  設定頁面跳轉
-    public function store(Request$request)
+    //單元2 < 練習2-3> 編輯 PostsController 裡設定 typehinting
+    public function store(PostRequest $request)
     {
         Post::create($request->all());
         return redirect()->route('admin.posts.index');
