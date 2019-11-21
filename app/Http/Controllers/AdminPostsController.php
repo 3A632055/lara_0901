@@ -1,23 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Post;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 //單元2 < 練習2-3> 編輯 PostsController 裡設定 typehinting
 use App\Http\Requests\PostRequest;
+use App\Post;
+
 
 class AdminPostsController extends Controller
 {
     public function index()
     {
-       // return view('admin.posts.index');
         $post=Post::orderBy('created_at', 'DESC')->get();
         $data=['posts'=>$post];
         return view('admin.posts.index', $data);
-
     }
 
     public function create()

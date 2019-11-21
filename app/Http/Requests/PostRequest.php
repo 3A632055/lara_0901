@@ -28,7 +28,7 @@ class PostRequest extends FormRequest
             //單元2 < 練習2-2> 設定 rules() 內回傳的驗證陣列
             'title'=>'required|min:3|max:255',
             'content'=>'required',
-            'is_feature'=>'required|boolean'
+            'is_feature'=>'required|boolean',
         ];
     }
 }

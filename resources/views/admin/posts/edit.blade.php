@@ -17,7 +17,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+@if ($errors‐>any())
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-danger alert-dismissable">
@@ -26,8 +26,9 @@
         </div>
     </div>
 </div>
+@endif
 <!-- /.row -->
-        //單元練習< 練習6-2>  修改 edit.blade.php表單
+<!--單元練習< 練習6-2>  修改 edit.blade.php表單-->
 <div class="row">
     <div class="col-lg-12">
         <form action="/admin/posts/{{$post->id}}" method="POST" role="form">

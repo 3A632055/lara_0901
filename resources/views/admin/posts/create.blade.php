@@ -17,7 +17,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+@if ($errors->any())
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-danger alert-dismissable">
@@ -26,11 +26,12 @@
         </div>
     </div>
 </div>
+@endif
 <!-- /.row -->
 
 <div class="row">
     <div class="col-lg-12">
-        //單元練習< 練習4-5> 開啟 resources/views/admin/posts/create.blade.php將 <form>及 </form>標籤，以HTML的表單改寫
+        <!--單元練習< 練習4-5> 開啟 resources/views/admin/posts/create.blade.php將 <form>及 </form>標籤，以HTML的表單改寫-->
         <form action="/admin/posts" method="POST" role="form">
             {{ csrf_field() }}
 
